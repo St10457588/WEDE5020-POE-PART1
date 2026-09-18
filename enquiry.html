@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Request a quote for plumbing services in Randburg and Benoni. Emergency repairs, geyser installation, bathroom renovations, and more.">
+    <title>Enquiry | Tapstone Plumbing Solutions</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><h1 class="logo-text">Tapstone<span class="logo-accent">Plumbing</span></h1></a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="main-nav" role="navigation">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="enquiry.html" class="nav-link active" aria-current="page">Enquiry</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Request a Quote</h1>
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a> <span class="breadcrumb-sep">/</span> <span class="breadcrumb-current">Enquiry</span>
+                </nav>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="enquiry-grid">
+                    <div class="enquiry-content">
+                        <h2>Get in Touch</h2>
+                        <p>Fill in the form below and we'll get back to you within 24 hours with a free, no-obligation quote.</p>
+
+                        <form id="enquiry-form" class="enquiry-form" action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="Your full name">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="011 123 4567">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="service">Service Required *</label>
+                                <select id="service" name="service" required>
+                                    <option value="">Select a service...</option>
+                                    <option value="emergency">Emergency Repairs</option>
+                                    <option value="geyser">Geyser Installation/Repair</option>
+                                    <option value="renovation">Bathroom Renovation</option>
+                                    <option value="compliance">Compliance Certificate</option>
+                                    <option value="maintenance">Maintenance Contract</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="location">Location *</label>
+                                <select id="location" name="location" required>
+                                    <option value="">Select your area...</option>
+                                    <option value="randburg">Randburg</option>
+                                    <option value="benoni">Benoni</option>
+                                    <option value="other">Other (please specify in message)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message / Details *</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Please describe your plumbing issue or project..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="consent" required>
+                                    <span>I agree to the processing of my personal information for the purpose of receiving a quote. *</span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-large btn-full">Submit Enquiry</button>
+
+                            <div id="form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
+                        </form>
+                    </div>
+
+                    <div class="enquiry-info">
+                        <h3>Why Choose Tapstone?</h3>
+                        <ul class="info-list">
+                            <li><strong>PIRB Registered:</strong> All work complies with South African plumbing standards</li>
+                            <li><strong>Free Quotes:</strong> No-obligation quotations for all services</li>
+                            <li><strong>Fast Response:</strong> We reply within 24 hours</li>
+                            <li><strong>Transparent Pricing:</strong> No hidden fees or surprises</li>
+                            <li><strong>Quality Guarantee:</strong> All work backed by our satisfaction guarantee</li>
+                        </ul>
+
+                        <h3>Emergency?</h3>
+                        <p>For urgent plumbing emergencies, don't wait for an email response. Call us immediately:</p>
+                        <a href="tel:+27111234567" class="btn btn-secondary btn-large">Call 011 123 4567</a>
+
+                        <h3>Our Service Areas</h3>
+                        <p>We proudly serve Randburg, Benoni, and surrounding areas in greater Gauteng.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-title">Tapstone Plumbing</h3>
+                    <p class="footer-text">Professional plumbing services in Randburg and Benoni. PIRB registered.</p>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="enquiry.html">Enquiry</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li><strong>Phone:</strong><br><a href="tel:+27111234567">011 123 4567</a></li>
+                        <li><strong>Email:</strong><br><a href="mailto:info@tapstoneplumbing.co.za">info@tapstoneplumbing.co.za</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; <span id="current-year">2026</span> Tapstone Plumbing Solutions (Pty) Ltd. All rights reserved.</p>
+                <p class="pirb-badge">PIRB Registered | License No: 12345</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

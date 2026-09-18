@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Tapstone Plumbing Solutions. Two locations in Randburg and Benoni. Call 011 123 4567 for professional plumbing services.">
+    <title>Contact | Tapstone Plumbing Solutions</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html"><h1 class="logo-text">Tapstone<span class="logo-accent">Plumbing</span></h1></a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="main-nav" role="navigation">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="enquiry.html" class="nav-link">Enquiry</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link active" aria-current="page">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Contact Us</h1>
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a> <span class="breadcrumb-sep">/</span> <span class="breadcrumb-current">Contact</span>
+                </nav>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <p>Have a plumbing question or need to book a service? Contact us using any of the methods below.</p>
+
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">📞</div>
+                                <div class="contact-text">
+                                    <h3>Phone</h3>
+                                    <p><a href="tel:+27111234567">011 123 4567</a></p>
+                                    <p class="contact-note">Available Mon-Fri 7am-5pm, Sat 8am-1pm</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">✉️</div>
+                                <div class="contact-text">
+                                    <h3>Email</h3>
+                                    <p><a href="mailto:info@tapstoneplumbing.co.za">info@tapstoneplumbing.co.za</a></p>
+                                    <p class="contact-note">We respond within 24 hours</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">🕐</div>
+                                <div class="contact-text">
+                                    <h3>Business Hours</h3>
+                                    <p>Monday - Friday: 7:00 AM - 5:00 PM</p>
+                                    <p>Saturday: 8:00 AM - 1:00 PM</p>
+                                    <p>Sunday: Closed (Emergency service available)</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">🚨</div>
+                                <div class="contact-text">
+                                    <h3>Emergency Service</h3>
+                                    <p>24/7 emergency plumbing available</p>
+                                    <p class="contact-note">Call our main number for after-hours emergencies</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper">
+                        <h3>Send us a Message</h3>
+                        <form id="contact-form" class="contact-form" action="#" method="POST">
+                            <div class="form-group">
+                                <label for="contact-name">Name *</label>
+                                <input type="text" id="contact-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email *</label>
+                                <input type="email" id="contact-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-phone">Phone</label>
+                                <input type="tel" id="contact-phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">Message *</label>
+                                <textarea id="contact-message" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                            <div id="contact-feedback" class="form-feedback" role="alert"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Locations with Maps -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title text-center">Our Locations</h2>
+                <p class="section-subtitle text-center">Serving Randburg and Benoni with pride</p>
+
+                <div class="locations-grid">
+                    <!-- Randburg Location -->
+                    <div class="location-card">
+                        <h3>Randburg Branch</h3>
+                        <address class="location-address">
+                            123 Main Road<br>
+                            Randburg, 2194<br>
+                            Gauteng, South Africa
+                        </address>
+                        <p class="location-phone"><strong>Phone:</strong> <a href="tel:+27111234567">011 123 4567</a></p>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=27.98,−26.09,28.02,−26.07&layer=mapnik" 
+                                width="100%" 
+                                height="250" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy"
+                                title="Map of Randburg area">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <!-- Benoni Location -->
+                    <div class="location-card">
+                        <h3>Benoni Branch</h3>
+                        <address class="location-address">
+                            456 Tom Jones Street<br>
+                            Benoni, 1501<br>
+                            Gauteng, South Africa
+                        </address>
+                        <p class="location-phone"><strong>Phone:</strong> <a href="tel:+27111234567">011 123 4567</a></p>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=28.30,−26.20,28.34,−26.18&layer=mapnik" 
+                                width="100%" 
+                                height="250" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy"
+                                title="Map of Benoni area">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 class="footer-title">Tapstone Plumbing</h3>
+                    <p class="footer-text">Professional plumbing services in Randburg and Benoni. PIRB registered.</p>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="enquiry.html">Enquiry</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li><strong>Phone:</strong><br><a href="tel:+27111234567">011 123 4567</a></li>
+                        <li><strong>Email:</strong><br><a href="mailto:info@tapstoneplumbing.co.za">info@tapstoneplumbing.co.za</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; <span id="current-year">2026</span> Tapstone Plumbing Solutions (Pty) Ltd. All rights reserved.</p>
+                <p class="pirb-badge">PIRB Registered | License No: 12345</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
