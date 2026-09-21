@@ -141,8 +141,43 @@ World Wide Web Consortium. (n.d.) *Markup validation service.* Available at: htt
 
 ---
 
-## 6. Next steps (Parts 2 and 3)
+# WEDE5020 — Portfolio of Evidence, Part 1 & Part 2
 
-1. **Part 2** â€” refine the stylesheet, complete responsive breakpoints, run a full accessibility and cross-browser pass, optimise images.
-2. **Part 3** â€” add the PHP mail handler with server-side validation, WhatsApp deep links, SEO metadata, Google Analytics 4, and deploy to shared hosting.
-3. **Final PoE** â€” screenshots, reflection and consolidated hand-in.
+**Student:** Garnette
+**Module:** WEDE5020 — Web Development
+**Submission:** Part 2 (responsive styling refinements, accessibility pass, component enhancements)
+**Client (Proposal 1, built site):** Tapstone Plumbing Solutions (Pty) Ltd — Randburg and Benoni, Gauteng
+**Client (Proposal 2, paper only):** Second Chance Animal Haven — NPO 087-654-NPO, Krugersdorp
+
+> Both organisations are **fictional teaching cases**. All prices, statistics, regulatory
+> requirements, hosting costs and legal references are taken from real, published South
+> African sources, listed under **References** below.
+
+---
+
+## 1. What is in this repository
+
+| Path | Description |
+| --- | --- |
+| `index.html` | Homepage — hero section, introduction, call to action, service summary, water-loss statistics, emergency badge |
+| `about.html` | Company history, milestone timeline, mission & vision, team profile cards, credentials & insurance data table |
+| `services.html` | Six service lines with indicative pricing and a supplied-and-installed price table |
+| `enquiry.html` | Structured quote-request form (service selection, suburb, property type, branch, urgency, POPIA consent) |
+| `contact.html` | Two physical locations, two embedded OpenStreetMap maps, trading-hours tables and general contact form |
+| `css/style.css` | Single consolidated stylesheet — design tokens, base resets, global components, page components, and banner contrast fixes |
+| `js/main.js` | Mobile navigation toggle, dynamic footer year update, form-validation feedback |
+| `images/` | Photographic assets (`hero-plumber.jpg`, `team-photo.jpg`, `leak-detection.jpg`, `solar-geyser.jpg`) |
+| `documents/` | Sitemaps, low-fidelity wireframe diagrams, and Part 1 proposal documents |
+| `content/` | Source text and copy drafts |
+| `README.md` | This documentation file |
+
+### Naming conventions
+
+* All file and folder names are lowercase and hyphen-separated (`hero-plumber.jpg`, `wireframe-1-homepage.png`).
+* One page per top-level task, named after its purpose (`enquiry.html`, not `form2.html`).
+* Images are named subject-first so they sort meaningfully in media directories.
+* CSS classes follow a consistent block-element structure (`.team-member`, `.team-member .role`, `.table-responsive`).
+
+---
+
+## 2. Sitemap
