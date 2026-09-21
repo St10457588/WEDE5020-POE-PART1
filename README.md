@@ -1,267 +1,148 @@
-# WEDE5020 Website Project - Tapstone Plumbing Solutions
+# WEDE5020 — Portfolio of Evidence, Part 1
 
-**Student:** Nqobani Ngwenya  
-**Student Number:** ST10457588  
-**Subject:** WEDE5020 - Website Development  
-**Project:** Part 1 & Part 2 Complete  
-**Date:** September 2026
+**Student:** Garnette
+**Module:** WEDE5020 — Web Development
+**Submission:** Part 1 (research, planning and basic HTML structure)
+**Client (Proposal 1, built site):** Tapstone Plumbing Solutions (Pty) Ltd — Randburg and Benoni, Gauteng
+**Client (Proposal 2, paper only):** Second Chance Animal Haven — NPO 087-654-NPO, Krugersdorp
 
----
-
-## Table of Contents
-
-1. [Project Overview](#project-overview)
-2. [Target Organisation](#target-organisation)
-3. [File Structure](#file-structure)
-4. [Features](#features)
-5. [Setup Instructions](#setup-instructions)
-6. [Responsive Design](#responsive-design)
-7. [Browser Testing](#browser-testing)
-8. [Screenshot Evidence](#screenshot-evidence)
-9. [References](#references)
+> Both organisations are **fictional teaching cases**. All prices, statistics, regulatory
+> requirements, hosting costs and legal references are taken from real, published South
+> African sources, listed under **References** below.
 
 ---
 
-## Project Overview
+## 1. What is in this repository
 
-This project delivers a professional, responsive website for **Tapstone Plumbing Solutions (Pty) Ltd**, a plumbing contractor operating in Randburg and Benoni, Gauteng.
+| Path | Description |
+| --- | --- |
+| `index.html` | Homepage — hero image, introduction, call to action, service summary, water-loss statistics, testimonials |
+| `about.html` | Company history, milestone timeline, mission and vision, team, registrations and cover |
+| `services.html` | Six service lines with indicative pricing and a supplied-and-installed price table |
+| `enquiry.html` | Structured quote-request form (service, suburb, property type, branch, urgency, POPIA consent) |
+| `contact.html` | Two locations, two embedded maps, trading-hours tables and a general contact form |
+| `css/style.css` | Single stylesheet — design tokens plus eleven commented sections |
+| `js/main.js` | Mobile navigation toggle, footer year, form-validation feedback |
+| `images/` | Photographic assets (`hero-plumber.jpg`, `team-photo.jpg`, `leak-detection.jpg`, `solar-geyser.jpg`) |
+| `documents/` | Sitemaps, low-fidelity wireframes and the Part 1 proposal document |
+| `content/` | Source text and copy drafts |
+| `README.md` | This file |
 
-The website includes five fully functional pages:
-- **Home** - Hero section, service highlights, trust indicators, CTAs
-- **About Us** - Company history, mission/vision, team profiles, certifications
-- **Services** - Detailed service descriptions (emergency repairs, geysers, renovations, compliance)
-- **Enquiry** - Quote request form with service selection and validation
-- **Contact** - Contact details, two location maps, contact form
+### Naming conventions
 
----
-
-## Target Organisation
-
-**Name:** Tapstone Plumbing Solutions (Pty) Ltd  
-**Industry:** Plumbing Services  
-**Locations:** Randburg and Benoni, Gauteng, South Africa  
-**Established:** 2018  
-**Registration:** PIRB License No: 12345
-
-### Why This Organisation?
-
-Tapstone represents a typical small South African trades business that needs a professional online presence to:
-- Generate qualified leads through enquiry forms
-- Establish credibility with PIRB certification display
-- Provide service information to reduce phone enquiry time
-- Improve local SEO visibility for plumbing searches
+* All file and folder names are lowercase and hyphen-separated (`hero-plumber.jpg`, `wireframe-1-homepage.png`).
+* One page per top-level task, named after its purpose (`enquiry.html`, not `form2.html`).
+* Images are named subject-first so they sort meaningfully.
+* CSS classes use a block-element pattern (`.service-card`, `.service-card__price`).
 
 ---
 
-## File Structure
+## 2. Sitemap
 
 ```
-wede5020-complete/
-│
-├── index.html              # Homepage
-├── about.html              # About Us page
-├── services.html           # Services page
-├── enquiry.html            # Enquiry/Quote form page
-├── contact.html            # Contact page with maps
-│
-├── css/
-│   └── styles.css          # Main stylesheet (24KB)
-│
-├── js/
-│   └── main.js             # JavaScript for interactivity
-│
-├── images/                 # Image assets folder
-├── documents/              # Proposal documents
-└── content/                # Text content files
+index.html (Home)
+├── about.html (About Us)        → Our story · Milestones · Mission & vision · Team · Credentials
+├── services.html (Services)     → Emergency · Leak detection · Geysers & solar ·
+│                                   Drains & CCTV · Bathrooms · Compliance certificates
+├── enquiry.html (Enquiry)       → Quote request form
+└── contact.html (Contact)       → Randburg head office (map) · Benoni branch (map) · General form
 ```
 
----
+Visual versions: `documents/sitemap-tapstone.png` and `documents/sitemap-second-chance.png`.
 
-## Features
-
-### HTML5
-- Semantic markup (`<header>`, `<nav>`, `<main>`, `<footer>`, `<article>`, `<section>`)
-- Proper heading hierarchy (H1 → H2 → H3)
-- Accessible forms with labels and ARIA attributes
-- Breadcrumb navigation on interior pages
-- Meta descriptions for SEO
-
-### CSS3
-- **CSS Reset** for cross-browser consistency
-- **CSS Custom Properties** (variables) for colours, fonts, spacing
-- **Flexbox** for header, navigation, and component layouts
-- **CSS Grid** for services, team, values, and footer layouts
-- **Responsive Typography** using rem units
-- **Hover, Focus, Active states** for interactive elements
-- **Transitions and transforms** for smooth animations
-- **Media Queries** for tablet (1024px) and mobile (768px, 480px)
-
-### JavaScript (ES6+)
-- Mobile menu toggle functionality
-- Dynamic year in footer
-- Form validation and submission handling
-- Smooth scroll for anchor links
-- Active navigation link highlighting
-- Form input validation on blur
-- Scroll-triggered animations with IntersectionObserver
-- Console welcome message
+Wireframes: `documents/wireframe-1-homepage.png`, `wireframe-2-inner-page.png`,
+`wireframe-3-enquiry.png`, `wireframe-4-contact.png`, `wireframe-5-npo-homepage.png`.
 
 ---
 
-## Setup Instructions
+## 3. Technical notes
 
-### To View Locally
+* Semantic HTML5 — `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<address>`, `<footer>`; `lang="en-ZA"`.
+* Mobile-first CSS with breakpoints at 960px and 760px; custom properties for the palette and type scale.
+* Vanilla JavaScript only (ES6). No frameworks, no build step — every page opens directly in a browser.
+* Accessibility: skip-to-content link, `aria-expanded` on the navigation toggle, `aria-live` form messages,
+  visible focus states, alternative text on every image, WCAG 2.1 AA contrast, `prefers-reduced-motion` support.
+* Maps are lazily loaded OpenStreetMap `embed.html` iframes, so no API key or paid tier is required.
+* Forms use `action="#"` in Part 1 — the server-side mail handler is scheduled for Part 3.
+* Every HTML, CSS and JS file is commented to explain structure and intent (brief item 5.6).
 
-1. Download and extract the repository zip file
-2. Navigate to the `wede5020-complete` folder
-3. Double-click `index.html` to open in your default browser
-4. Navigate through all pages using the menu
+### Cross-browser testing
 
-### File Requirements
+Tested at 1280×900 and 390×840 in Chromium, and reviewed in Chrome, Edge, Firefox and Safari.
+Markup validated with the W3C Markup Validation Service.
 
-- Modern web browser (Chrome, Firefox, Safari, Edge)
-- No server required - runs directly from file system
-- Internet connection required for Google Fonts
+### Colour and type
 
----
+| Role | Hex |
+| --- | --- |
+| Navy (primary) | `#0F2A3D` |
+| Deep navy | `#0A1E2D` |
+| Water teal | `#1E7A8C` |
+| Copper accent | `#C4703A` |
+| Sand | `#F6F4F0` |
+| Ink (body text) | `#1B2733` |
 
-## Responsive Design
-
-### Breakpoints
-
-| Breakpoint | Width | Layout Changes |
-|------------|-------|----------------|
-| Desktop | 1025px+ | 4-column grids, full navigation |
-| Tablet | 769px - 1024px | 2-column grids, condensed spacing |
-| Mobile | 481px - 768px | Single-column grids, hamburger menu |
-| Small Mobile | ≤480px | Reduced font sizes, minimal padding |
-
-### Mobile-First Features
-
-- Hamburger menu replaces horizontal navigation
-- All grids collapse to single column
-- Buttons stack vertically on CTAs
-- Form rows become single-column
-- Font sizes scale down for readability
-- Touch-friendly button sizes (minimum 44px height)
-
-### Responsive Units Used
-
-- **rem** for font sizes (accessibility - respects user browser settings)
-- **%** for widths (fluid layouts)
-- **vw/vh** avoided for better control
-- **em** for component-specific spacing
+Headings: Bricolage Grotesque (600/800). Body: Satoshi (400/500/700). Both are open-licensed.
 
 ---
 
-## Browser Testing
+## 4. Asset and licensing credits
 
-### Tested Browsers
-
-| Browser | Version | Status |
-|---------|---------|--------|
-| Chrome | 127+ | ✓ Fully Tested |
-| Firefox | 128+ | ✓ Tested |
-| Safari | 17+ | ✓ Tested |
-| Edge | 127+ | ✓ Tested |
-
-### Testing Methodology
-
-1. Open each page in browser
-2. Test all navigation links
-3. Test mobile menu toggle
-4. Test form validation
-5. Resize window to test responsive breakpoints
-6. Verify all interactive elements work
-
-### Known Limitations
-
-- Forms do not send emails (requires Part 3 backend)
-- Maps are OpenStreetMap embeds (static, not interactive)
-- Images are placeholders (to be replaced with actual photos)
+* **Typefaces** — Bricolage Grotesque via Google Fonts (SIL Open Font License 1.1) and Satoshi via Fontshare, both free for commercial use.
+* **Maps** — OpenStreetMap, © OpenStreetMap contributors, Open Database License.
+* **Photographs** — generated for this project and therefore free of third-party rights. Where stock imagery is substituted later, Unsplash-licensed images will be used and credited.
+* **Icons** — inline SVG drawn for this project; no icon font is loaded.
 
 ---
 
-## Screenshot Evidence
+## 5. References
 
-### Desktop (1280px)
+Harvard style. All sources accessed 27 August 2026. These are the references used in the
+Part 1 proposal document (`documents/WEDE5020-Part1-Project-Proposals.docx`) together with the
+general sources consulted while completing Part 1.
 
-All five pages tested at 1280px width:
+Afrihost. (2026) *Domain registration and pricing.* Available at: https://www.afrihost.com/domains
 
-1. **Homepage** - Hero section, 4-column service grid, trust indicators
-2. **About Us** - Two-column layout, team grid, certifications
-3. **Services** - Service detail sections with alternating layouts
-4. **Enquiry** - Two-column form with info sidebar
-5. **Contact** - Contact details with two location maps
+Bunnypants. (2026) *How much does web design cost in South Africa? 2026 price guide.* Available at: https://www.bunnypants.co.za/how-much-does-web-design-cost-in-south-africa/
 
-### Tablet (768px)
+Department of Social Development. (n.d.) *About the NPO Directorate.* Available at: https://www.dsd.gov.za/index.php/npo/about-us
 
-- Navigation converts to hamburger menu
-- Grids reduce to 2 columns
-- Spacing reduced proportionally
+Google. (n.d.) *Google Fonts: frequently asked questions.* Available at: https://fonts.google.com/faq
 
-### Mobile (390px)
+Institute of Plumbing South Africa. (n.d.) *Industry news: unregistered plumbers and the informal sector.* Available at: https://www.iopsa.org/news/10752826
 
-- Single-column layout throughout
-- Hamburger menu active
-- Buttons full-width
-- Form inputs stack vertically
-- Footer columns stack
+Leaflet. (n.d.) *Leaflet: an open-source JavaScript library for mobile-friendly interactive maps.* Available at: https://leafletjs.com/
 
-### How to Capture Your Own Screenshots
+MyBroadband. (2025) *The cheapest .CO.ZA domain prices in South Africa.* Available at: https://mybroadband.co.za/news/cloud-hosting/589029-cheapest-co-za-domain-prices.html
 
-1. Open Chrome DevTools (F12)
-2. Click device toggle (Ctrl+Shift+M)
-3. Select device or enter custom dimensions
-4. Use three-dot menu → "Capture screenshot"
+New Perspective Studio. (2026) *What is the cost of creating a website in South Africa?* Available at: https://www.newperspectivestudio.co.za/wp/what-is-the-cost-of-creating-a-website-in-south-africa/
 
----
+Our City News. (2025) *Joburg by numbers 2025.* Available at: https://ourcitynews.co.za/joburg-by-numbers-2025/
 
-## References
+Plumbing Industry Registration Board. (n.d.) *Registration requirements.* Available at: https://www.pirb.co.za/registration/
 
-### Pricing Research
+Plumbing Industry Registration Board. (n.d.) *What is the plumber's code of conduct?* Available at: https://www.pirb.co.za/Support/what-is-the-plumbers-code-of-conduct/
 
-1. Afrihost. (2026). Domain Registration Pricing. Available at: https://www.afrihost.com/domains
+Republic of South Africa. (1997) *Nonprofit Organisations Act 71 of 1997.* Available at: https://www.gov.za/documents/nonprofit-organisations-act
 
-2. Xneelo. (2026). Web Hosting Review. SME South Africa. Available at: https://smesouthafrica.co.za/brands/xneelo-web-hosting-review/
+SIL International. (n.d.) *SIL Open Font License, version 1.1.* Available at: https://github.com/googlefonts/googlefonts-project-template/blob/main/OFL.txt
 
-3. New Perspective Studio. (2025). What is the Cost of Creating a Website in South Africa? Available at: https://www.newperspectivestudio.co.za/wp/what-is-the-cost-of-creating-a-website-in-south-africa/
+SME South Africa. (n.d.) *Xneelo web hosting review and pricing.* Available at: https://smesouthafrica.co.za/brands/xneelo-web-hosting-review/
 
-### Industry Standards
+South African Revenue Service. (n.d.) *Application for Section 18A approval.* Available at: https://www.sars.gov.za/businesses-and-employers/tax-exempt-institutions/application-for-section-18a/
 
-4. Water Research Commission. (2018). Compliance of Plumbing Products in South Africa. Report No. 1702-1-081.
+Switch2OSM. (n.d.) *Getting started with Leaflet.* Available at: https://switch2osm.org/using-tiles/getting-started-with-leaflet/
 
-5. Plumbing Industry Registration Board (PIRB). (2026). Registration Requirements. Available at: https://www.pirb.co.za/registration/
+Unsplash. (n.d.) *Unsplash licence.* Available at: https://unsplash.com/license
 
-### Technical Documentation
+Water Research Commission. (2008) *The state of plumbing in South Africa, Report 1702/1/08.* Available at: https://www.wrc.org.za/wp-content/uploads/mdocs/1702-1-081.pdf
 
-6. MDN Web Docs. (2026). CSS Layout. Available at: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout
-
-7. Web Content Accessibility Guidelines (WCAG) 2.1. (2018). W3C Recommendation.
+World Wide Web Consortium. (n.d.) *Markup validation service.* Available at: https://validator.w3.org/
 
 ---
 
-## Part 3 Preview
+## 6. Next steps (Parts 2 and 3)
 
-The following enhancements are planned for Part 3:
-
-- Backend form handling (PHP/Node.js)
-- Email notifications for enquiries
-- Image gallery with lightbox
-- Google Analytics integration
-- Performance optimisation (image compression, minification)
-- Deployment to live hosting
-
----
-
-## Contact
-
-For questions about this project, contact:
-
-**Nqobani Ngwenya**  
-Student Number: ST10457588  
-Email: st10457588@student.email
-
----
-
-**Last Updated:** 18 September 2026
+1. **Part 2** — refine the stylesheet, complete responsive breakpoints, run a full accessibility and cross-browser pass, optimise images.
+2. **Part 3** — add the PHP mail handler with server-side validation, WhatsApp deep links, SEO metadata, Google Analytics 4, and deploy to shared hosting.
+3. **Final PoE** — screenshots, reflection and consolidated hand-in.
